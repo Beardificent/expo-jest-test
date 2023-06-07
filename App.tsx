@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { BoxWithIcon, SquareBox } from "./components";
+import { Center, NativeBaseProvider, VStack } from "native-base";
 
 export default function App() {
+  const inset = {
+    frame: { x: 0, y: 0, width: 0, height: 0 },
+    insets: { top: 0, left: 0, right: 0, bottom: 0 },
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider initialWindowMetrics={inset}>
+      <SafeAreaProvider>
+        <VStack space={10} p={10}>
+          <BoxWithIcon iconName="user" text="Hello BoxWithIcon" />
+          <SquareBox children={"Hello SquareBox"} />
+        </VStack>
+      </SafeAreaProvider>
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

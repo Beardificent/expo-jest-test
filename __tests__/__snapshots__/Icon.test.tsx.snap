@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BoxWithIcon renders BoxWithIcon with NativeBaseProvider + mocked component 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <mock-icon
+    data-testid="mock-box-with-icon"
+    iconName="user"
+    text="Hello BoxWithIcon"
+  />
+</RNCSafeAreaProvider>
+`;
+
+exports[`BoxWithIcon renders the component correctly without NativeBaseProvider + mocked content + correct property values 1`] = `
+<mock-icon
+  data-testid="mock-box-with-icon"
+  iconName="user"
+  text="Hello BoxWithIcon"
+/>
+`;
